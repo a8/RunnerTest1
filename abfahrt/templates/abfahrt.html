@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+
+    <h2>Wetter</h2>
+    <ul>
+      {% for item in weather %}
+      <li>
+        {{ item[0]}}: {{ item[1] }}
+      </li>
+      {% endfor %}
+    </ul>
+    <h2>Abfahrtsplan</h2>
+    <ul>
+      {% for schedule in schedules %}
+      <li>
+        {{schedule.line}} nach {{schedule.direction}} kommt in {{schedule.arrival}} Minuten
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+{% endblock %}
